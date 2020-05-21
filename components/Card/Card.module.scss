@@ -1,0 +1,43 @@
+.card {
+  text-decoration: none;
+  position: relative;
+  box-sizing: border-box;
+  text-align: left;
+  height: 447px;
+  min-width: 308px;
+  background-color: white;
+  margin: 10px;
+  background: #18003899 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00283829;
+  padding: 40px;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  cursor: pointer;
+  .site {
+    flex: 0 1 auto;
+    font-size: 14px;
+    color: #6a92b8;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+  .title {
+    flex: 0 1 auto;
+    font-size: 18px;
+  }
+  .excerpt {
+    flex: 1 1 auto;
+    font-size: 16px;
+    overflow: hidden;
+  }
+  .bar {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: 100px;
+    height: 10px;
+    background: transparent
+      linear-gradient(94deg, #5d67f0 0%, #6067ec 3%, #ff6c29 100%) 0% 0%
+      no-repeat padding-box;
+  }
+}

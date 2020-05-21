@@ -1,4 +1,4 @@
-import { Posts } from "../../../repos/posts";
+import { Posts } from "../../../server/repo/posts";
 import { NextApiHandler } from "next";
 
 const handler: NextApiHandler = async (req, res) => {

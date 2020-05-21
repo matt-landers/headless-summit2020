@@ -18,4 +18,9 @@
       font-size: 3em;
     }
   }
+  .cards {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+  }
 }

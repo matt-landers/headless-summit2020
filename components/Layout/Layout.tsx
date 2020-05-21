@@ -16,7 +16,7 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({
     <div className={`${styles.main} ${className}`}>{children}</div>
     <div className={styles.backgroundContainer}>
       <div className={styles.backgroundGradient}></div>
-      <div className={styles.backgroundImage}>
+      <div className={styles.imageContainer}>
         <img className={styles.backgroundImage} src="/images/vaporwave.png" />
       </div>
     </div>
