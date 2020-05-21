@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "wpe-build": "next build",
     "start": "next start"
   },
   "keywords": [],
