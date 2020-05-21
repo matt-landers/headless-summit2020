@@ -7,9 +7,9 @@ let _posts = [];
 
 // };
 
-export const Posts = async (baseurl: string) => {
+export const Posts = async () => {
   if (_posts.length > 0) return _posts;
-  const result = await fetch(`${baseurl}api/posts`);
+  const result = await fetch(`${process.env.API_URL}/api/posts`);
   if (!result.ok) {
     return [];
   }
