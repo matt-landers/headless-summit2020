@@ -1,4 +1,5 @@
 .layout {
+  position: relative;
   font-family: "Open Sans";
   min-height: 100vh;
   min-width: 100vw;
@@ -11,8 +12,9 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - 225px);
   width: 100%;
+  background-color: #000324;
 }
 .backgroundGradient {
   flex: 1;

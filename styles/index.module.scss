@@ -1,6 +1,21 @@
 .home {
+  color: white;
+  header {
+    max-width: 877px;
+  }
   h1 {
-    color: white;
     font-size: 4em;
+    max-width: 877px;
+  }
+  .description {
+    display: block;
+    font-weight: 200;
+    font-size: 1.5em;
+  }
+  .main {
+    text-align: center;
+    h2 {
+      font-size: 3em;
+    }
   }
 }

@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  position: relative;
+  height: 246px;
+  background-color: #000324;
+  padding: 2em;
+  color: white;
+  flex-direction: column;
+  .linkContainer {
+    flex: 1;
+  }
+
+  .legalContainer {
+    width: 100%;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    .legal {
+      flex: 1;
+      color: #98a2a7;
+      font-size: 12px;
+      text-align: right;
+    }
+    .copyright {
+      color: #98a2a7;
+      font-size: 12px;
+    }
+  }
+}
