@@ -1,0 +1,16 @@
+.logoBox {
+  display: flex;
+  flex-flow: row wrap;
+  height: 40px;
+  min-width: 40px;
+  text-decoration: none;
+  overflow: hidden;
+}
+.logoMark {
+  height: 100%;
+  width: auto;
+}
+.logoText {
+  height: 100%;
+  width: auto;
+}

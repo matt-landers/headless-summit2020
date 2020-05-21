@@ -1,0 +1,30 @@
+.layout {
+  font-family: "Open Sans";
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.backgroundContainer {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.backgroundGradient {
+  flex: 1;
+  background-color: #000324;
+}
+.backgroundImage {
+  flex: 1;
+  width: 100%;
+}
+
+.main {
+  max-width: 1187px;
+  margin: 0 auto;
+  padding: 2em;
+}
