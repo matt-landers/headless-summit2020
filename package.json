@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "wpe-build": "next build",
-    "start": "next start"
+    "start": "next start -p 8080"
   },
   "keywords": [],
   "author": "",
