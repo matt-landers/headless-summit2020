@@ -9,7 +9,8 @@ let _posts = [];
 
 export const Posts = async () => {
   if (_posts.length > 0) return _posts;
-  const result = await fetch(`${process.env.API_URL}/api/posts`);
+  const url = `${process.env.API_URL}/api/posts`;
+  const result = await fetch(url);
   if (!result.ok) {
     return [];
   }
