@@ -44,8 +44,10 @@ const Home = ({ posts }) => {
   );
 };
 
-Home.getInitialProps = async (ctx: NextPageContext) => {
-  const posts = await Posts();
+Home.getInitialProps = async ({ req }: NextPageContext) => {
+  const baseUrl = req.headers.referer;
+  console.log(baseUrl);
+  const posts = await Posts(baseUrl);
   console.log(posts);
   return { posts };
 };

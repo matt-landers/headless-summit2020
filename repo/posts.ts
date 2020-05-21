@@ -7,9 +7,9 @@ let _posts = [];
 
 // };
 
-export const Posts = async () => {
+export const Posts = async (baseurl: string) => {
   if (_posts.length > 0) return _posts;
-  const result = await fetch("http://localhost:3000/api/posts");
+  const result = await fetch(`${baseurl}api/posts`);
   if (!result.ok) {
     return [];
   }
