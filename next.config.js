@@ -1,5 +1,4 @@
 module.exports = () => {
-  console.log(process.env);
   return {
     env: {
       CATEGORIES:

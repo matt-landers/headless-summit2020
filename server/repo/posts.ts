@@ -12,7 +12,6 @@ interface PostCache {
 const EXPIRE_IN = 5 * 60 * 1000; //5 minutes
 
 const _cache: PostCache = {};
-let count = 0;
 
 export const Post = async (uid: string) => {
   const posts = await Posts();
@@ -20,7 +19,6 @@ export const Post = async (uid: string) => {
 };
 
 export const Posts = async () => {
-  console.log(count++);
   if (_cache?.lastCached && Date.now() - _cache.lastCached < EXPIRE_IN) {
     return [..._cache.posts];
   }
