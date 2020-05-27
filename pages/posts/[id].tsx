@@ -1,10 +1,11 @@
-import { Layout, Card } from "../../components";
+import { Layout } from "../../components";
 import styles from "../../styles/post.module.scss";
 import { GetServerSideProps } from "next";
 import { Post as GetPost } from "../../repo/posts";
-import { scrub } from "../../utils/scrub";
+import { scrub } from "../../utils";
 
 const Post = ({ post }) => {
+  console.log(post);
   return (
     <Layout className={styles.post}>
       <header>

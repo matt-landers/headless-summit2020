@@ -1,4 +1,5 @@
 import fetch from "node-fetch";
+import { clone } from "../../utils";
 
 const BLOGS = process.env.BLOGS.split(",");
 const CATEGORIES = process.env.CATEGORIES.split(",");
@@ -47,7 +48,7 @@ export const Posts = async () => {
 
   _cache.posts = posts;
   _cache.lastCached = Date.now();
-  return [...posts];
+  return clone(posts);
 };
 
 const PostURLs = async (): Promise<Array<string>> => {
