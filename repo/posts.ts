@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 
 let _posts = [];
 
-// export const Post = async (uid: string) => {
-//   const result = await fetch(`/api/posts/${uid}`);
-
-// };
+export const Post = async (uid: string) => {
+  const result = await fetch(`${process.env.API_URL}/api/posts/${uid}`);
+  return await result.json();
+};
 
 export const Posts = async () => {
   if (_posts.length > 0) return _posts;
@@ -17,11 +17,3 @@ export const Posts = async () => {
   _posts = await result.json();
   return [..._posts];
 };
-
-// export const usePosts = () => {
-//   const [posts, setPosts] = useState([]);
-//   useEffect(() => {
-//     Posts().then((p) => setPosts(p));
-//   }, []);
-//   return posts;
-// };

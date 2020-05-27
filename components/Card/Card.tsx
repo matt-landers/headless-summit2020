@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./Card.module.scss";
 
 export const Card = ({ post }) => (
-  <Link href="#">
+  <Link href="/posts/[id]" as={`/posts/${post.uid}`}>
     <div className={styles.card}>
       <span className={styles.site}>{post.link.split("/")[2]}</span>
       <h3
