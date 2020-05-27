@@ -22,9 +22,9 @@ const Post = ({ post }) => {
             day: "numeric",
           })}
         </span>
-        <h1 className={styles.blogtitle}>{post?.title.rendered}</h1>
+        <h1 className={styles.blogtitle}>{post?.title?.rendered}</h1>
         <div
-          dangerouslySetInnerHTML={{ __html: scrub(post?.content.rendered) }}
+          dangerouslySetInnerHTML={{ __html: scrub(post?.content?.rendered) }}
         ></div>
       </article>
     </Layout>
