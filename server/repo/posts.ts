@@ -21,7 +21,7 @@ export const Post = async (uid: string) => {
 
 export const Posts = async () => {
   if (_cache?.lastCached && Date.now() - _cache.lastCached < EXPIRE_IN) {
-    return [..._cache.posts];
+    return clone(_cache.posts);
   }
 
   const posts = [];

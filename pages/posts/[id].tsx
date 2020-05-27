@@ -5,7 +5,6 @@ import { Post as GetPost } from "../../repo/posts";
 import { scrub } from "../../utils";
 
 const Post = ({ post }) => {
-  console.log(post);
   return (
     <Layout className={styles.post}>
       <header>
