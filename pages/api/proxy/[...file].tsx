@@ -3,16 +3,16 @@ import { NextApiHandler } from "next";
 
 const handler: NextApiHandler = (oreq: any, ores) => {
   const parts: Array<string> = oreq.url.replace("/api/proxy/", "").split("/");
-
+  let site = oreq.query?.site ?? parts[0];
   const headers = {
     ...oreq.headers,
-    referer: "https://" + parts[0],
+    referer: "https://" + site,
   };
   delete headers["host"];
 
   return proxyRequest(
     {
-      host: parts[0],
+      hostname: parts[0],
       port: 443,
       path: `/${parts.slice(1).join("/")}`,
       headers,
@@ -22,7 +22,7 @@ const handler: NextApiHandler = (oreq: any, ores) => {
 };
 
 interface proxyOptions {
-  host: string;
+  hostname: string;
   port: number;
   path: string;
   headers: { [key: string]: string };
@@ -30,14 +30,15 @@ interface proxyOptions {
 
 const proxyRequest = (options: proxyOptions, res): Promise<void> => {
   return new Promise((resolve, reject) => {
-    const { host, port, path, headers } = options;
+    const { hostname, port, path, headers } = options;
     const creq = https
       .request(
         {
-          host,
+          hostname,
           port,
           path,
           headers,
+          rejectUnauthorized: false,
         },
         (pres) => {
           // if (pres.headers["location"]) {

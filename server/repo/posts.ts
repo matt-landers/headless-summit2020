@@ -16,10 +16,11 @@ const _cache: PostCache = {};
 
 export const Post = async (uid: string) => {
   const posts = await Posts();
-  return posts.find((post) => post.uid === uid);
+  const post = posts.find((post) => post.uid === uid);
+  return post;
 };
 
-export const Posts = async () => {
+export const Posts = async (): Promise<Array<any>> => {
   if (_cache?.lastCached && Date.now() - _cache.lastCached < EXPIRE_IN) {
     return clone(_cache.posts);
   }
