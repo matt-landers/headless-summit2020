@@ -3,7 +3,10 @@ export const scrub = (text: string) => {
   let newText: string;
   newText = text.replace(/src="https:\/\//g, `src="/api/proxy/`);
   newText = newText.replace(/src="http:\/\//g, `src="/api/proxy/`);
-  newText = newText.replace(/(?=(width|height|style)\=")(.*?)(?=" )./g, "");
+  newText = newText.replace(
+    /(?=(width|height|style|srcset)\=")(.*?)(?=" )./g,
+    ""
+  );
   return newText;
 };
 
