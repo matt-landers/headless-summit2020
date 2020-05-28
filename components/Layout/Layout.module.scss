@@ -3,6 +3,7 @@
   font-family: "Open Sans";
   min-height: 100vh;
   min-width: 100%;
+  max-width: 100%;
 }
 
 .backgroundContainer {
@@ -34,4 +35,11 @@
   max-width: 1187px;
   margin: 0 auto;
   padding: 2em;
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    max-width: 100%;
+    padding: 1em;
+  }
 }

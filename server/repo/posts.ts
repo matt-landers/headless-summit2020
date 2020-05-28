@@ -31,9 +31,8 @@ export const Posts = async () => {
     if (result.ok) {
       const data = await result.json();
       for (let post of data) {
-        console.log(post.slug);
         post.site = url.split("/")[2];
-        post.uid = post.site + post.id;
+        post.uid = `${post.site}-${post.slug}`;
         posts.push(post);
       }
     }

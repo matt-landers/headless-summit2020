@@ -13,14 +13,21 @@ const Post = ({ post }) => {
         </h2>
       </header>
       <article className={styles.article}>
-        <span className={styles.published}>PUBLISHED: </span>
-        <span className={styles.publishedDate}>
+        <span className={styles.metadata}>PUBLISHED: </span>
+        <span className={styles.metadataValue}>
           {new Date(post.date).toLocaleDateString("en-us", {
             weekday: "long",
             year: "numeric",
             month: "long",
             day: "numeric",
           })}
+        </span>
+        <span>&nbsp;&nbsp;&nbsp;</span>
+        <span className={styles.metadata}>VIEW ON: </span>
+        <span className={styles.metadataValue}>
+          <a href={post?.link} target="_blank">
+            {post?.site}
+          </a>
         </span>
         <h1 className={styles.blogtitle}>{post?.title?.rendered}</h1>
         <div

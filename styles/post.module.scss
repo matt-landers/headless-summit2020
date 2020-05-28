@@ -17,23 +17,26 @@
     padding: 2em;
     background-color: #18003899;
     text-align: left;
-    font-size: 24px;
+    font-size: 1.25rem;
     font-weight: 200;
-    .published {
+    .metadata {
       font-size: 14px;
       font-weight: bold;
       color: #6a92b8;
     }
-    .publishedDate {
+    .metadataValue {
       font-size: 14px;
       color: #6a92b8;
+      a {
+        color: #6a92b8;
+      }
     }
     .blogtitle {
       margin-top: 0;
-      font-size: 44px;
+      font-size: 2.5rem;
     }
     h2 {
-      font-size: 3em;
+      font-size: 1.5rem;
     }
     a {
       color: white;
@@ -50,19 +53,15 @@
   }
 
   @media screen and (max-width: 900px) {
+    .sitetitle {
+      font-size: 1.5em;
+    }
     .article {
-      h2 {
-        font-size: 2em;
+      padding: 1em;
+      font-size: 1rem;
+      .blogtitle {
+        font-size: 2rem;
       }
-    }
-    h1 {
-      font-size: 2.5em;
-    }
-    header {
-      max-width: auto;
-    }
-    .description {
-      font-size: 1.2em;
     }
   }
 }
