@@ -39,5 +39,12 @@
     background: transparent
       linear-gradient(94deg, #5d67f0 0%, #6067ec 3%, #ff6c29 100%) 0% 0%
       no-repeat padding-box;
+    transition: 0.3s;
+  }
+  &:hover {
+    .bar {
+      left: 0;
+      width: 100%;
+    }
   }
 }
