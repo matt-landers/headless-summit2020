@@ -70,15 +70,11 @@ const proxyRequest = (options: proxyOptions, res): Promise<void> => {
         }
       )
       .on("error", (e) => {
-        // we got an error
         console.log(e.message);
         try {
-          // attempt to set error message and http status
           res.writeHead(500);
           res.write(e.message);
-        } catch (e) {
-          // ignore
-        }
+        } catch (e) {}
         res.end();
         reject(e);
       });

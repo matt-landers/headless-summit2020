@@ -27,17 +27,23 @@ export const Posts = async (): Promise<Array<any>> => {
 
   const posts = [];
   const urls = await PostURLs();
+  const all = [];
   for (const url of urls) {
-    const result = await fetch(url);
-    if (result.ok) {
-      const data = await result.json();
-      for (let post of data) {
-        post.site = url.split("/")[2];
-        post.uid = `${post.site}-${post.slug}`;
-        posts.push(post);
-      }
-    }
+    all.push(
+      fetch(url).then(async (result) => {
+        if (result.ok) {
+          const data = await result.json();
+          for (let post of data) {
+            post.site = result.url?.split("/")[2];
+            post.uid = `${post.site}-${post.slug}`;
+            posts.push(post);
+          }
+        }
+      })
+    );
   }
+
+  await Promise.all(all);
 
   posts.sort((a, b) => {
     const adate = new Date(a.date_gmt),
