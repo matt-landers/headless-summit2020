@@ -22,7 +22,7 @@ const Post = ({ post }) => {
             day: "numeric",
           })}
         </span>
-        <span>&nbsp;&nbsp;&nbsp;</span>
+        <span> </span>
         <span className={styles.metadata}>VIEW ON: </span>
         <span className={styles.metadataValue}>
           <a href={post?.link} target="_blank">
