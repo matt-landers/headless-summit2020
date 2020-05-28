@@ -38,8 +38,9 @@
     a {
       color: white;
     }
-    video {
-      max-width: 100% !important;
+    video,
+    img {
+      max-width: 100%;
     }
   }
   .cards {

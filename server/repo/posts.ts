@@ -10,7 +10,7 @@ interface PostCache {
   lastCached?: number;
 }
 
-const EXPIRE_IN = 5 * 60 * 1000; //5 minutes
+const EXPIRE_IN = 15 * 60 * 1000; //15 minutes
 
 const _cache: PostCache = {};
 
@@ -31,7 +31,9 @@ export const Posts = async () => {
     if (result.ok) {
       const data = await result.json();
       for (let post of data) {
-        post.uid = url.split("/")[2] + post.id;
+        console.log(post.slug);
+        post.site = url.split("/")[2];
+        post.uid = post.site + post.id;
         posts.push(post);
       }
     }

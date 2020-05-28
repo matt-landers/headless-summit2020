@@ -4,7 +4,7 @@ import styles from "./Card.module.scss";
 export const Card = ({ post }) => (
   <Link href="/posts/[id]" as={`/posts/${post.uid}`}>
     <div className={styles.card}>
-      <span className={styles.site}>{post.link.split("/")[2]}</span>
+      <span className={styles.site}>{post.site}</span>
       <h3
         className={styles.title}
         dangerouslySetInnerHTML={{ __html: post.title.rendered }}
