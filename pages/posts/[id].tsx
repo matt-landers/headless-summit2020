@@ -1,8 +1,8 @@
 import { Layout } from "../../components";
 import styles from "../../styles/post.module.scss";
 import { GetServerSideProps } from "next";
-import { Post as GetPost } from "../../repo/posts";
 import { scrub } from "../../utils";
+import { ServerRepo } from "../../server/repo";
 
 const Post = ({ post }) => {
   return (
@@ -39,8 +39,7 @@ const Post = ({ post }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const post = await GetPost((ctx as any).params["id"]);
-
+  const post = await ServerRepo.Post((ctx as any).params["id"]);
   return { props: { post } };
 };
 

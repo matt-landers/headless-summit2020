@@ -15,8 +15,8 @@ const EXPIRE_IN = 15 * 60 * 1000; //15 minutes
 const _cache: PostCache = {};
 
 export const Post = async (uid: string) => {
-  const posts = await Posts();
-  const post = posts.find((post) => post.uid === uid);
+  await Posts();
+  const post = _cache.posts.find((post) => post.uid === uid);
   return post;
 };
 
@@ -26,7 +26,7 @@ export const Posts = async (): Promise<Array<any>> => {
   }
 
   const posts = [];
-  const urls = await PostURLs();
+  const urls = await postURLs();
   const all = [];
   for (const url of urls) {
     all.push(
@@ -56,10 +56,14 @@ export const Posts = async (): Promise<Array<any>> => {
 
   _cache.posts = posts;
   _cache.lastCached = Date.now();
-  return clone(posts);
+  const p = clone(posts);
+  for (let post of p) {
+    delete post["content"];
+  }
+  return p;
 };
 
-const PostURLs = async (): Promise<Array<string>> => {
+const postURLs = async (): Promise<Array<string>> => {
   const urls = [];
 
   for (const blog of BLOGS) {
@@ -72,7 +76,11 @@ const PostURLs = async (): Promise<Array<string>> => {
           catids.push(wpcat.id);
         }
       }
-      urls.push(`${blog}/wp-json/wp/v2/posts?categories=${catids.join(",")}`);
+      urls.push(
+        `${blog}/wp-json/wp/v2/posts?categories=${catids.join(
+          ","
+        )}&_fields=id,site,title,excerpt,slug,content`
+      );
     }
   }
   _cache.urls = urls;

@@ -1,7 +1,7 @@
 import { Layout, Card } from "../components";
 import styles from "../styles/index.module.scss";
-import { NextComponentType, NextPageContext } from "next";
-import { Posts } from "../repo/posts";
+import { NextComponentType, NextPageContext, GetStaticProps } from "next";
+import { ServerRepo } from "../server/repo";
 
 const Home = ({ posts }) => {
   const Cards: NextComponentType<
@@ -44,9 +44,9 @@ const Home = ({ posts }) => {
   );
 };
 
-Home.getInitialProps = async (ctx: NextPageContext) => {
-  const posts = await Posts();
-  return { posts };
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const posts = await ServerRepo.Posts();
+  return { props: { posts }, unstable_revalidate: 15 };
 };
 
 export default Home;
