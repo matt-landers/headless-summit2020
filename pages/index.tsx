@@ -21,7 +21,7 @@ const Home = ({ posts }) => {
   return (
     <Layout className={styles.home}>
       <header>
-        <h1>Headless WordPress and Modern App Development</h1>
+        <h1>Headless WordPress and Content Management Systems</h1>
         <p className={styles.description}>
           The world’s best platform for digital experiences now offers full
           hosting of headless architecture! Power up your WordPress driven
