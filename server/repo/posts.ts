@@ -79,7 +79,7 @@ const postURLs = async (): Promise<Array<string>> => {
       urls.push(
         `${blog}/wp-json/wp/v2/posts?categories=${catids.join(
           ","
-        )}&_fields=id,site,title,excerpt,slug,content`
+        )}&_fields=id,site,title,excerpt,slug,content,link`
       );
     }
   }

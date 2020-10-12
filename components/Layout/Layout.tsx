@@ -24,7 +24,12 @@ export const Layout: React.FunctionComponent<LayoutProps> = ({
     <div className={styles.backgroundContainer}>
       <div className={styles.backgroundGradient}></div>
       <div className={styles.imageContainer}>
-        <img className={styles.backgroundImage} src="/images/vaporwave.png" />
+        <img
+          className={styles.backgroundImage}
+          srcSet="/images/vaporwave-800.webp 800w, /images/vaporwave.webp 1600w"
+          sizes="(max-width: 800px) 800px, (min-width: 801px) 1600px"
+          src="/images/vaporwave-800.webp"
+        />
       </div>
     </div>
     <Footer />
