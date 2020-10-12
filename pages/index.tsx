@@ -46,7 +46,7 @@ const Home = ({ posts }) => {
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const posts = await ServerRepo.Posts();
-  return { props: { posts }, unstable_revalidate: 15 };
+  return { props: { posts }, revalidate: 15 };
 };
 
 export default Home;
